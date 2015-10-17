@@ -5959,8 +5959,8 @@ button.close {
   .inner-page-header > .page-tools {
     float: right; }
     .inner-page-header > .page-tools * {
-      margin-left: 20px;
-      margin-top: 20px;
+      margin-top: 5px;
+      margin-left: 10px;
       font-size: 24px; }
 
 .inner-page-content {
@@ -5975,6 +5975,12 @@ button.close {
 .panel-default {
   background-color: #494862;
   color: #fff; }
+
+#fa-question {
+  bottom: -1px; }
+
+#fa-download {
+  bottom: -2px; }
 
 html {
   overflow-y: hidden; }
