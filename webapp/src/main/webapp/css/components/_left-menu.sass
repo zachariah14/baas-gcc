@@ -1,0 +1,68 @@
+.left-menu
+  @media screen and (max-width: 767px)
+    display: none //hiding left-menu in small devices
+
+  position: relative
+  float: left
+  width: $leftMenu-width
+  height: 100%
+  background-color: lighten($leftNavMenu-bg, 5%)
+  overflow: hidden
+
+  & .list-group-item
+    background-color: lighten($leftNavMenu-bg, 5%)
+    border-radius: 0
+    border: none
+    padding: 0
+
+    & > a
+      text-decoration: none
+      +innerShadow(-1px, 0, 0, 0, rgba(0,0,0,0.1))
+      padding: 7px 0 7px 15px
+      color: lighten($lightGrey, 5%)
+
+      &:first-child
+        border-top-width: 0
+
+      &:hover
+        background-color: $leftNavMenu-hover
+
+      &.active
+        background-color: $leftNavMenu-active
+        color: white
+
+        &:after
+          content: ""
+          width: 0
+          height: 0
+          position: absolute
+          display: block
+          right: -2px
+          top: 7px
+          border-style: solid
+          border-width: 8px 11px 8px 0
+          border-color: transparent $mainContentwindow-bg transparent transparent
+          z-index: 200
+
+      & > .fa, & > .glyphicon
+        margin-right: 6px
+
+.left-menu-wrapper
+  position: absolute
+  left: 0px
+  top: 0px
+  right: 0px
+  bottom: 0px
+  +innerShadow(-1px, 0, 0, 0, rgba(0,0,0,0.1))
+
+.menu-group-title
+  padding-left: 15px
+  margin-top: 10px
+  padding-top: 3px
+  padding-bottom: 1px
+  border: 1px solid darken($leftNavMenu-border, 20%)
+  border-width: 0 0 1px 0
+  font-size: .85em
+  font-weight: bold
+  color: lighten($lightGrey, 20%)
+

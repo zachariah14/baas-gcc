@@ -1,0 +1,16 @@
+=innerShadow($h, $v, $blur, $spread, $color)
+  -moz-box-shadow: $h, $v, $blur, $spread, $color
+  -webkit-box-shadow: $h, $v, $blur, $spread, $color
+  box-shadow: $h, $v, $blur, $spread, $color
+
+=brandGradient($color1, $color2, $color3)
+  background: $color1 /* Old browsers */
+  background: -moz-linear-gradient(left, $color2 0%, $color2 21%, $color3 92%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$color2), color-stop(21%,$color2), color-stop(92%,$color3)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, $color2 0%,$color2 21%,$color3 92%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $color2 0%,$color2 21%,$color3 92%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $color2 0%,$color2 21%,$color3 92%) /* IE10+ */
+  background: linear-gradient(to right, $color2 0%,$color2 21%,$color3 92%) /* W3C */
+
+=brandGradientFilter($start, $end)
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$start, endColorstr=$end,GradientType=1 ) /* IE6-9 */

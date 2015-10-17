@@ -1,0 +1,91 @@
+.header
+  height: 50px
+
+.logo
+  font-family: Candara, Calibri, Segoe, 'Segoe UI', Optima, Arial, sans-serif
+  font-size: 36px
+  font-style: normal
+  font-variant: normal
+
+.brand
+  position: absolute
+  margin-left: -15px
+  width: 200px
+  //background-color: lighten($brandbar-bg, 5%)
+  +brandGradient(rgb(26,191,190), rgba(26,191,190,1), rgba(151,241,219,1))
+  +brandGradientFilter('#1abfbe', '#97f1db')
+
+  & > .span-cont
+    width: 50%
+    margin: 0 auto
+
+    & > a.navbar-brand > span.logo
+      color: #f9f9f9
+      font-weight: 700
+
+.navbar-default
+  background-color: lighten($brandbar-bg, 2%)
+  border-color: transparent
+
+  & .navbar-nav
+    & > li
+      & > a, .user-login > a
+        color: white
+        font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif
+        font-size: 14px
+        font-style: normal
+        font-variant: normal
+
+      &.user-login > a
+        font-weight: bold
+
+        & > span
+          padding-left: 10px
+
+.nav.navbar-nav.pull-right
+  & > li
+    &.header-btn
+      top: 14px
+      & button span
+        margin-left: 30px
+        right: 0
+
+    &:not(.header-btn)
+      border-style: solid
+      border-width: 0 0 0 1px
+      border-color: transparent transparent transparent lighten($brandbar-bg, 7%)
+
+      &:hover:not(.user-login):not(.pressed)
+        background-color: lighten($brandbar-bg, 5%)
+        & a
+          color: darken($brandbar-bg, 25%)
+
+      &.pressed
+        background-color: darken($brandbar-bg, 20%)
+        border-width: 0 1px 0 1px
+        border-color: transparent lighten($brandbar-bg, 10%) transparent lighten($brandbar-bg, 10%)
+
+        &+li
+          border-left-width: 0
+
+        & a
+          color: white
+
+      &:first-child
+        border-left-width: 0
+
+      &:last-child
+        //border-right-width: 0
+        padding-left: 30px
+
+    &.header-btn
+      & a:hover, a:active
+        color: darken(#f9f9f9, 5%)
+
+      &.last
+        padding-right: 30px
+
+.navbar
+  border: none
+  border-radius: 0
+
