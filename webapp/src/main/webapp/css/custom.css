@@ -5800,13 +5800,13 @@ button.close {
   float: left;
   width: 200px;
   height: 100%;
-  background-color: #3e3d53;
+  background-color: #545371;
   overflow: hidden; }
   @media screen and (max-width: 767px) {
     .left-menu {
       display: none; } }
   .left-menu .list-group-item {
-    background-color: #3e3d53;
+    background-color: #545371;
     border-radius: 0;
     border: none;
     padding: 0; }
@@ -5820,9 +5820,9 @@ button.close {
       .left-menu .list-group-item > a:first-child {
         border-top-width: 0; }
       .left-menu .list-group-item > a:hover {
-        background-color: #282735; }
+        background-color: #3e3d53; }
       .left-menu .list-group-item > a.active {
-        background-color: #282735;
+        background-color: #3e3d53;
         color: white; }
         .left-menu .list-group-item > a.active:after {
           content: "";
@@ -5973,7 +5973,7 @@ button.close {
   margin-right: 15px; }
 
 .panel-default {
-  background-color: #333244;
+  background-color: #494862;
   color: #fff; }
 
 html {
