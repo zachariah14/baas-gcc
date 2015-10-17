@@ -5972,6 +5972,10 @@ button.close {
   margin-left: 15px;
   margin-right: 15px; }
 
+.panel-default {
+  background-color: #333244;
+  color: #fff; }
+
 html {
   overflow-y: hidden; }
 
@@ -6123,4 +6127,4 @@ footer {
     text-transform: uppercase;
     font-size: 13px; }
 
-/*# sourceMappingURL=clap-exam.css.map */
+/*# sourceMappingURL=custom.css.map */
