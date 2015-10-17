@@ -1,0 +1,145 @@
+<div class="container-fluid">
+    <!--HEADER-->
+    <div class="inner-page-header">
+        <div class="page-title">
+            <h2>Game Currencies Configuration</h2>
+        </div>
+        <div class="page-tools">
+            <ul class="nav nav-pills">
+                <li><i class="fa fa-file-code-o"></i></li>
+                <li id="fa-quaetion"><i class="fa fa-question-circle"/></i></li>
+                <li id="fa-download"><i class="fa fa-download"/></i></li>
+                <li><i class="fa fa-upload"/></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--PANELS-->
+    <div class="inner-page-content">
+        <div class="container-fluid">
+
+            <!--CURRENCY FORM-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row" ng-if="errorMessage != null">
+                        <div class="alert alert-danger">{{errorMessage}}</div>
+                    </div>
+
+                    <form role="form" id="currency-form" class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input ng-model="currency.name" type="text" class="form-control input-xs" id="name"
+                                   placeholder="Currency name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="btn-group">
+                                <button ng-model="currency.type" id="currency-type-btn" class="btn btn-primary btn-xs dropdown-toggle"
+                                        type="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    Type
+                                    <span class="caret"/>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Integer</a></li>
+                                    <li><a href="#">Float</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="currency.min" type="text" class="form-control input-xs" id="min"
+                                   placeholder="Min" required>
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="currency.max" type="text" class="form-control input-xs" id="max"
+                                   placeholder="Max" required>
+                        </div>
+                        <div class="form-group">
+                            <a class="btn btn-primary btn-xs" ng-click="addCurrency()" href="#">
+                                <i class="fa fa-plus"></i> Add Currency</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--CURRENCY FORM END-->
+
+            <!--CURRENCY TABLE-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <table class="table table-hover table-striped table-condensed">
+                        <thead>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Min</th>
+                        <th>Max</th>
+                        <th>Action</th>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="message in messages | filter:query">
+                            <td>{{currency.name}}</td>
+                            <td>{{currency.type}}</td>
+                            <td>{{currency.min}}<td>
+                            <td>{{currency.max}}<td>
+                            <td>
+                                <button type="button" class="btn btn-danger btn-xs"
+                                        ng-click="deleteCurrency(currency.id)">Delete <span
+                                        class="fa fa-remove"></span></button>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;" >
+                            <div class="container-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

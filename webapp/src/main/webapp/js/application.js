@@ -7,7 +7,7 @@ baasModule.config(['$routeProvider', function($routeProvider) {
             controller: 'MessagesController'
         }).
         when('/quest', {
-            templateUrl: 'templates/quest.html',
+            templateUrl: 'templates/gcc.html',
             controller: 'QuestsController'
         }).
         when('/uicomponents', {
