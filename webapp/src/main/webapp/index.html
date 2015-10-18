@@ -54,8 +54,18 @@
                         </div>
                     </div>
 
+                    <div ng-controller="menuCtrl" id="navbar" class="collapse navbar-collapse">
 
-                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="user-login">
+                                <a href="#/Login" class="navbar-link">
+                                    Mike Smith <span class="fa fa-user" aria-hidden="true"/></a>
+                            </li>
+                        </ul>
+
+                        <ul ng-repeat="menu in menus" class="nav navbar-nav pull-right">
+                            <li><a ng-class="{active:($parent.selected == $index)}" ng-click="$parent.selected = $index" href="#/quest">{{menu}}</a></li>
+                        </ul>
 
                         <ul class="nav navbar-nav pull-right">
                             <li class="header-btn">
@@ -81,7 +91,6 @@
                                         <li><a href="#">Binary Options</a></li>
                                         <li><a href="#">Social Gaming</a></li>
                                         <li><a href="#">Mexos</a></li>
-
                                     </ul>
                                 </div>
                             </li>
@@ -109,15 +118,6 @@
                                     </ul>
                                 </div>
                             </li>
-
-                            <li class="nav-first pressed"><a href="#/quest">Build</a></li>
-                            <li><a href="#/list">Manage</a></li>
-                            <li><a href="#/uicomponents">Analyze</a></li>
-                            <li><a href="#">Grow</a></li>
-                            <li class="user-login"><a href="#" class="navbar-link">
-                                Mike Smith <span class="fa fa-user" aria-hidden="true"/>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
                 </div>
                 <ul class="list-group nav nav-inner">
                     <li ng-repeat="item in group.items" class="list-group-item">
-                        <a ng-class="{active:($parent.selected == $index)}" ng-click="$parent.selected = $index">{{item}}</a>
+                        <a ng-class="{active:(isActive('/{{item}}'))}" href="#/{{item}}" >{{item}}</a>
                     </li>
                 </ul>
             </div>

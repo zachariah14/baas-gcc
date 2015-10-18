@@ -1,20 +1,50 @@
 var baasModule = angular.module('baasModule', ['ngRoute', 'baasControllers']);
 
 baasModule.config(['$routeProvider', function($routeProvider) {
+
     $routeProvider.
-        when("/list", {
-            templateUrl: 'templates/list.html',
-            controller: 'MessagesController'
+        //GAME ITEMS
+        when("/Properties", {
+            templateUrl: 'templates/properties.html'
         }).
-        when('/quest', {
-            templateUrl: 'templates/gcc.html',
+        when('/Assets', {
+            templateUrl: 'templates/assets.html'
+        }).
+        when('/Data', {
+            templateUrl: 'templates/data.html'
+        }).
+        when('/Code', {
+            templateUrl: 'templates/code.html'
+        })
+        .when('/Versions', {
+            templateUrl: 'templates/versions.html'
+        }).
+
+        //PLAYERS ITEMS
+        when("/Login", {
+            templateUrl: 'templates/login.html'
+        }).
+        when('/Uploads', {
+            templateUrl: 'templates/uploads.html'
+        }).
+        when('/Inventory', {
+            templateUrl: 'templates/inventory.html'
+        })
+        .when('/Saves', {
+            templateUrl: 'templates/saves.html'
+        })
+        .when('/Sync', {
+            templateUrl: 'templates/sync.html'
+        })
+
+        //ECONOMY ITEMS
+        .when('/Currencies', {
+            templateUrl: 'templates/currencies.html',
             controller: 'CurrencyController'
         }).
-        when('/uicomponents', {
-            templateUrl: 'templates/uicomponents.html'
-        }).
+
         otherwise({
-            redirectTo: '/quest'
+            redirectTo: '/Currencies'
         });
 }]);
 
@@ -79,6 +109,8 @@ baasModule.directive('bsDropdown', function ($compile) {
                 }
             }
             scope.selectVal = function (item) {
+                if (item === undefined || item == null)
+                    return;
                 switch (attrs.menuType) {
                     case "button":
                         $('button.button-label', element).html(item.name);

@@ -1,0 +1,152 @@
+<div class="container-fluid">
+    <!--HEADER-->
+    <div class="inner-page-header">
+        <div class="page-title">
+            <h2>Inventory</h2>
+        </div>
+        <div class="page-tools">
+            <ul class="nav nav-pills">
+                <li><i class="fa fa-file-code-o"></i></li>
+                <li id="fa-quaetion"><i class="fa fa-question-circle"/></i></li>
+                <li id="fa-download"><i class="fa fa-download"/></i></li>
+                <li><i class="fa fa-upload"/></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--PANELS-->
+    <div class="inner-page-content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="inventory" class="jumbotron">
+                        <h1>Inventory page</h1>
+                        <p>This page is for inventory account</p>
+                        <p>The implementation will be provided soon</p>
+                        <p><a class="btn btn-primary btn-lg" href="#" role="button">Try what is ready</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!--CURRENCY FORM-->
+            <!--<div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row" ng-if="errorMessage != null">
+                        <div class="alert alert-danger">{{errorMessage}}</div>
+                    </div>
+
+                    <form role="form" id="currency-form" class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input ng-model="currency.curname"
+                                   type="text"
+                                   class="form-control input-xs"
+                                   id="name"
+                                   placeholder="Currency name">
+                        </div>
+
+                        <div class="form-group" >
+                            <bs-dropdown select-val = "currency.curtype = selectedVal"
+                                         preselected-item = "get"
+                                         data-dropdown-data = "types"
+                                         id="currency-type-btn"
+                                         data-menu-type="button"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input ng-model="currency.curmin" type="text" class="form-control input-xs" id="min"
+                                   placeholder="Min">
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="currency.curmax" type="text" class="form-control input-xs" id="max"
+                                   placeholder="Max">
+                        </div>
+                        <div class="form-group">
+                            <a id="add-curr-btn" class="btn btn-default btn-xs"  ng-click="addCurrency()" href="#">
+                                <i class="fa fa-plus"></i> Add Currency</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            &lt;!&ndash;CURRENCY FORM END&ndash;&gt;
+
+            &lt;!&ndash;CURRENCY TABLE&ndash;&gt;
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <table class="table table-hover table-striped table-condensed">
+                        <thead>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="currency in currencies | filter:query">
+                                <td>{{currency.curname}}</td>
+                                <td>{{currency.curtype}}</td>
+                                <td>{{currency.curmin}}</td>
+                                <td>{{currency.curmax}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-xs"
+                                            ng-click="deleteCurrency(currency.id)">Delete <span
+                                            class="fa fa-remove"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>-->
+
+            <!--DEMO PANELS-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 200px;" >
+                            <div class="container-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-body" style="height: 150px;">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

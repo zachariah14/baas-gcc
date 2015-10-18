@@ -1,6 +1,6 @@
 var baasControllers = angular.module('baasControllers', []);
 
-baasControllers.controller('menuCtrl', function ($scope) {
+baasControllers.controller('menuCtrl', function ($scope, $location) {
     //$scope.menu = ['Game', 'Players', 'Economy'];
     $scope.groups =
     [
@@ -9,11 +9,22 @@ baasControllers.controller('menuCtrl', function ($scope) {
             "items": ['Properties', 'Assets', 'Data', 'Code', 'Versions']},
         {
             "title": "PLAYERS",
-            "items": ['Login', 'properties', 'Uploads', 'Inventory', 'Saves', 'Sync']},
+            "items": ['Login', 'Uploads', 'Inventory', 'Saves', 'Sync']},
         {
             "title": "ECONOMY",
             "items": ['Currencies']}
     ];
+
+    $scope.menus = ['Grow','Analyze','Manage','Build'];
+
+    $scope.isActive = function (path) {
+        if ($location.path().substr(0, path.length) === path) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 });
 
 baasControllers.controller('CurrencyController', function($scope, $http) {
@@ -60,9 +71,20 @@ baasControllers.controller('CurrencyController', function($scope, $http) {
             } else {
                 $scope.errorMessage = "Adding currency failed!"
             }
-        }).error(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config)   {
             $scope.errorMessage = "Adding currency failed!"
         });
     };
+
+
+    //$scope.isActive = function (path) {
+    //    if ($location.path().substr(0, path.length) === path) {
+    //        return true;
+    //    } else {
+    //        return false;
+    //    }
+    //}
+
+    $scope.menus = ['Build', 'Manage', 'Analyze', 'Grow'];
 
 });

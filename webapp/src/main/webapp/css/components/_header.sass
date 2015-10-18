@@ -50,6 +50,10 @@
         margin-left: 30px
         right: 0
 
+    & > a.active
+      background-color: darken($brandbar-bg, 10%) !important
+      color: white !important
+
     &:not(.header-btn)
       border-style: solid
       border-width: 0 0 0 1px
@@ -72,11 +76,11 @@
           color: white
 
       &:first-child
-        border-left-width: 0
+        //border-left-width: 0
 
       &:last-child
         //border-right-width: 0
-        padding-left: 30px
+        padding-left: 0px //30
 
     &.header-btn
       & a:hover, a:active
@@ -88,4 +92,3 @@
 .navbar
   border: none
   border-radius: 0
-
