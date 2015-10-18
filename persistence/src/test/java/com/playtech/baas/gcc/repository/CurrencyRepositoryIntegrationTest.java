@@ -1,8 +1,7 @@
 package com.playtech.baas.gcc.repository;
 
-
 import com.playtech.baas.gcc.SpringApp;
-import com.playtech.baas.gcc.domain.Message;
+import com.playtech.baas.gcc.domain.Currency;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,32 +14,34 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringApp.class)
-public class MessageRepositoryIntegrationTest {
+public class CurrencyRepositoryIntegrationTest {
+
     @Autowired
-    private MessageRepository messageRepository;
+    CurrencyRepository currencyRepository;
 
     @Test
-    public void shouldFindAllMessages() {
+    public void shouldFindAllCurrencies() {
         //when:
-        Page<Message> messages = messageRepository.findAll(new PageRequest(0, 3));
+        Page<Currency> currencies = currencyRepository.findAll(new PageRequest(0, 5));
         //then:
-        assertThat(messages.getTotalElements()).isEqualTo(10L);
+        assertThat(currencies.getTotalElements()).isEqualTo(4L);
     }
 
     @Test
-    public void shouldFindMessageWithId() {
+    public void shouldFindCurrencyWithId() {
         //when:
-        Message message = messageRepository.findOne(0L);
+        Currency currency = currencyRepository.findOne(0L);
         //then:
-        assertThat(message).isNotNull();
-        assertThat(message.getHeader()).isNotNull().isEqualTo("Header1");
+        assertThat(currency).isNotNull();
+        assertThat(currency.getName()).isNotNull().isEqualTo("Default Coins");
     }
 
     @Test
     public void shouldReturnNullWhenMessageWithIdDoesNotExist() {
         //when:
-        Message message = messageRepository.findOne(999L);
+        Currency currency = currencyRepository.findOne(999L);
         //then:
-        assertThat(message).isNull();
+        assertThat(currency).isNull();
     }
+
 }

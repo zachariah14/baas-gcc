@@ -1,10 +1,59 @@
 .btn
   margin-right: 15px
   font-size: 12px
-  font-weight: 600
+  font-weight: 200
 
 .btn-default
   color: #fff
-  background-color: transparent
-  border: solid 1px lighten($brandbar-bg, 55%)
+  background-color: lighten($brandbar-bg, 5%)
+  border: solid 1px lighten($brandbar-bg, 10%)
+
+  &:hover
+    background-color: lighten($brandbar-bg, 10%)
+    border: solid 1px lighten($brandbar-bg, 15%)
+
+.btn-group
+  &> .dropdown-toggle:active
+    background-color: darken($brandbar-bg, 5%)
+    border: solid 1px darken($brandbar-bg, 10%)
+  &> .open.dropdown-toggle:active
+    background-color: darken($brandbar-bg, 5%)
+    border: solid 1px darken($brandbar-bg, 10%)
+
+.btn-default:active
+  &:hover,
+  &:focus,
+  &.focus
+    +defaultButtonStatesBG()
+
+.btn-default.active
+  &:hover,
+  &:focus,
+  &.focus
+    +defaultButtonStatesBG()
+
+.open > .btn-default.dropdown-toggle
+  +defaultButtonStatesBG()
+
+.open > .btn-default.dropdown-toggle
+  &:hover,
+  &:focus,
+  &.focus
+    +defaultButtonStatesBG()
+
+
+//.btn-default:active:hover,
+//.btn-default:active:focus,
+//.btn-default:active.focus,
+//.btn-default.active:hover,
+//.btn-default.active:focus,
+//.btn-default.active.focus,
+//.open > .btn-default.dropdown-toggle,
+//.open > .btn-default.dropdown-toggle:hover,
+//.open > .btn-default.dropdown-toggle:focus,
+//.open > .btn-default.dropdown-toggle.focus
+//  background-color: darken($brandbar-bg, 5%)
+//  border: solid 1px darken($brandbar-bg, 10%)
+//  color: white
+
 

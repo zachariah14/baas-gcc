@@ -32,19 +32,10 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="btn-group">
-                                <button ng-model="currency.type" id="currency-type-btn" class="btn btn-primary btn-xs dropdown-toggle"
-                                        type="button" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    Type
-                                    <span class="caret"/>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Integer</a></li>
-                                    <li><a href="#">Float</a></li>
-                                </ul>
-                            </div>
+                            <bs-dropdown id="currency-type-btn" data-menu-type="button" select-val="selectedType = selectedVal"
+                                         preselected-item="get" data-dropdown-data="types"></bs-dropdown>
                         </div>
+
                         <div class="form-group">
                             <input ng-model="currency.min" type="text" class="form-control input-xs" id="min"
                                    placeholder="Min" required>
@@ -54,7 +45,7 @@
                                    placeholder="Max" required>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-primary btn-xs" ng-click="addCurrency()" href="#">
+                            <a id="add-curr-btn" class="btn btn-default btn-xs" ng-click="addCurrency()" href="#">
                                 <i class="fa fa-plus"></i> Add Currency</a>
                         </div>
                     </form>
@@ -64,7 +55,7 @@
 
             <!--CURRENCY TABLE-->
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <table class="table table-hover table-striped table-condensed">
                         <thead>
                         <th>Name</th>
@@ -74,7 +65,7 @@
                         <th>Action</th>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="message in messages | filter:query">
+                        <tr ng-repeat="currency in currencies | filter:query">
                             <td>{{currency.name}}</td>
                             <td>{{currency.type}}</td>
                             <td>{{currency.min}}<td>
@@ -90,7 +81,8 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!--DEMO PANELS-->
+            <!--<div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-body" style="height: 200px;">
@@ -138,8 +130,6 @@
                     </div>
                 </div>
             </div>
-                </div>
-            </div>
-        </div>
+        </div>-->
     </div>
 </div>

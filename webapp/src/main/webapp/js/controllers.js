@@ -1,26 +1,5 @@
 var baasControllers = angular.module('baasControllers', []);
 
-baasControllers.controller('QuestsController', function($scope, $http) {
-    $scope.quests = [];
-
-    $http.get('/java_script_quest/all').success(function (data, status, headers, config) {
-        $scope.quests = data;
-
-        //TODO impl parsing real questData from backend in D3 script
-        getTest(data);
-
-    }).error(function (data, status, headers, config) {
-        $scope.errorMessage = "Can't retrieve quests list!";
-        $scope.status = status;
-    });
-
-    $scope.activeClass = function() {
-		return "el-container answer-success";
-    }
-
-
-});
-
 baasControllers.controller('menuCtrl', function ($scope) {
     //$scope.menu = ['Game', 'Players', 'Economy'];
     $scope.groups =
@@ -37,43 +16,52 @@ baasControllers.controller('menuCtrl', function ($scope) {
     ];
 });
 
-baasControllers.controller('MessagesController', function($scope, $http) {
-    $scope.messages = [];
+baasControllers.controller('CurrencyController', function($scope, $http) {
+    $scope.currencies = [];
 
-    $http.get('/message/all').success(function (data, status, headers, config) {
-        $scope.messages = data;
+    $http.get('/currency/all').success(function (data, status, headers, config) {
+        $scope.currencies = data;
     }).error(function (data, status, headers, config) {
-        $scope.errorMessage = "Can't retrieve messages list!";
+        $scope.errorMessage = "Can't retrieve currencies list!";
     });
 
-    $scope.deleteMessage = function(id) {
-        $http.delete('/message/delete/' + id).success(function (data, status, headers, config) {
-            $scope.messages = $scope.messages.filter(function(message) {
-                    return message.id != id;
+    $scope.deleteCurrency = function(id) {
+        $http.delete('/currency/delete/' + id).success(function (data, status, headers, config) {
+            $scope.currencies = $scope.currencies.filter(function(currency) {
+                    return currency.id != id;
                 }
             );
         }).error(function (data, status, headers, config) {
-            $scope.errorMessage = "Can't delete message!";
+            $scope.errorMessage = "Can't delete currency!";
         });
     };
 
-    $scope.sendMessage = function() {
-        var message = $scope.message;
-        var params = JSON.stringify(message);
-        $http.post('/message/create', params, {
+    $scope.addCurrency = function() {
+        var currency = $scope.currency;
+        var params = JSON.stringify(currency);
+        $http.post('/currency/create', params, {
             headers: {
                 'Content-Type': 'application/json; charset=UTF-8'
             }
         }).success(function (data, status, headers, config) {
             if(data.created) {
-                $scope.messages.push(data.newMessage);
-                $scope.message = {};
+                $scope.currencies.push(data.newCurrency);
+                $scope.currency = {};
                 $scope.errorMessage = null;
             } else {
-                $scope.errorMessage = "Sending message failed!"
+                $scope.errorMessage = "Adding currency failed!"
             }
         }).error(function (data, status, headers, config) {
-            $scope.errorMessage = "Sending message failed!"
+            $scope.errorMessage = "Adding currency failed!"
         });
     };
+
+    $scope.setType = function(type) {
+        $scope.selectedType = type;
+    };
+
+    $scope.types = [
+        {id: 'type1', name: 'Integer'},
+        {id: 'type2', name: 'Float'}
+    ];
 });

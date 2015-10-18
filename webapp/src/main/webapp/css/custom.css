@@ -5863,12 +5863,42 @@ button.close {
 .btn {
   margin-right: 15px;
   font-size: 12px;
-  font-weight: 600; }
+  font-weight: 200; }
 
 .btn-default {
   color: #fff;
-  background-color: transparent;
-  border: solid 1px #defbfa; }
+  background-color: #1abfbe;
+  border: solid 1px #1dd6d5; }
+  .btn-default:hover {
+    background-color: #1dd6d5;
+    border: solid 1px #2ae2e1; }
+
+.btn-group > .dropdown-toggle:active {
+  background-color: #149392;
+  border: solid 1px #117c7b; }
+.btn-group > .open.dropdown-toggle:active {
+  background-color: #149392;
+  border: solid 1px #117c7b; }
+
+.btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus {
+  background-color: #149392;
+  border: solid 1px #117c7b;
+  color: white; }
+
+.btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus {
+  background-color: #149392;
+  border: solid 1px #117c7b;
+  color: white; }
+
+.open > .btn-default.dropdown-toggle {
+  background-color: #149392;
+  border: solid 1px #117c7b;
+  color: white; }
+
+.open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus {
+  background-color: #149392;
+  border: solid 1px #117c7b;
+  color: white; }
 
 .header {
   height: 50px; }
@@ -5992,8 +6022,11 @@ button.close {
 #currency-form {
   padding-left: 0; }
 
-#currency-type-btn {
-  margin-right: 0; }
+#currency-type-btn > * > .btn, #add-curr-btn {
+  margin-right: 0;
+  border: solid 0px #117c7b; }
+  #currency-type-btn > * > .btn + .btn, #add-curr-btn + .btn {
+    border-left: solid 1px #1dd6d5; }
 
 html {
   overflow-y: hidden; }
