@@ -27,7 +27,7 @@
 
                     <form role="form" id="currency-form" class="navbar-form navbar-left">
                         <div class="form-group">
-                            <input ng-model="currency.name" type="text" class="form-control input-xs" id="name"
+                            <input ng-model="currency.curname" type="text" class="form-control input-xs" id="name"
                                    placeholder="Currency name" required>
                         </div>
 
@@ -37,11 +37,11 @@
                         </div>
 
                         <div class="form-group">
-                            <input ng-model="currency.min" type="text" class="form-control input-xs" id="min"
+                            <input ng-model="currency.curmin" type="text" class="form-control input-xs" id="min"
                                    placeholder="Min" required>
                         </div>
                         <div class="form-group">
-                            <input ng-model="currency.max" type="text" class="form-control input-xs" id="max"
+                            <input ng-model="currency.curmax" type="text" class="form-control input-xs" id="max"
                                    placeholder="Max" required>
                         </div>
                         <div class="form-group">
@@ -66,10 +66,10 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="currency in currencies | filter:query">
-                            <td>{{currency.name}}</td>
-                            <td>{{currency.type}}</td>
-                            <td>{{currency.min}}<td>
-                            <td>{{currency.max}}<td>
+                            <td>{{currency.curname}}</td>
+                            <td>{{currency.curtype}}</td>
+                            <td>{{currency.curmin}}<td>
+                            <td>{{currency.curmax}}<td>
                             <td>
                                 <button type="button" class="btn btn-danger btn-xs"
                                         ng-click="deleteCurrency(currency.id)">Delete <span

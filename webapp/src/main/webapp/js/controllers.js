@@ -19,6 +19,15 @@ baasControllers.controller('menuCtrl', function ($scope) {
 baasControllers.controller('CurrencyController', function($scope, $http) {
     $scope.currencies = [];
 
+    $scope.types = [
+        {id: 'type1', name: 'Integer'},
+        {id: 'type2', name: 'Float'}
+    ];
+
+    $scope.setType = function(type) {
+        $scope.selectedType = type;
+    };
+
     $http.get('/currency/all').success(function (data, status, headers, config) {
         $scope.currencies = data;
     }).error(function (data, status, headers, config) {
@@ -56,12 +65,4 @@ baasControllers.controller('CurrencyController', function($scope, $http) {
         });
     };
 
-    $scope.setType = function(type) {
-        $scope.selectedType = type;
-    };
-
-    $scope.types = [
-        {id: 'type1', name: 'Integer'},
-        {id: 'type2', name: 'Float'}
-    ];
 });
