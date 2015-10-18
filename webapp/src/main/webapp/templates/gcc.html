@@ -61,27 +61,27 @@
 
             <!--CURRENCY TABLE-->
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <table class="table table-hover table-striped table-condensed">
                         <thead>
-                        <th>Name</th>
-                        <th>Type</th>
-                        <th>Min</th>
-                        <th>Max</th>
-                        <th>Action</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Min</th>
+                            <th>Max</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="currency in currencies | filter:query">
-                            <td>{{currency.curname}}</td>
-                            <td>{{currency.curtype}}</td>
-                            <td>{{currency.curmin}}<td>
-                            <td>{{currency.curmax}}<td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-xs"
-                                        ng-click="deleteCurrency(currency.id)">Delete <span
-                                        class="fa fa-remove"></span></button>
-
-                        </tr>
+                            <tr ng-repeat="currency in currencies | filter:query">
+                                <td>{{currency.curname}}</td>
+                                <td>{{currency.curtype}}</td>
+                                <td>{{currency.curmin}}</td>
+                                <td>{{currency.curmax}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger btn-xs"
+                                            ng-click="deleteCurrency(currency.id)">Delete <span
+                                            class="fa fa-remove"></span></button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

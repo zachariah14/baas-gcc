@@ -55,7 +55,7 @@ baasModule.directive('bsDropdown', function ($compile) {
             doSelect: '&selectVal',
             selectedItem: '=preselectedItem'
         },
-        link: function ($scope, element, attrs) {
+        link: function (scope, element, attrs) {
             var html = '';
             switch (attrs.menuType) {
                 case "button":
@@ -71,14 +71,14 @@ baasModule.directive('bsDropdown', function ($compile) {
                         '<a tabindex="-1" data-ng-click="selectVal(item)">{{item.name}}</a>' +
                     '</li>' +
                 '</ul></div>';
-            element.append($compile(html)($scope));
-            for (var i = 0; i < $scope.items.length; i++) {
-                if ($scope.items[i].id === $scope.selectedItem) {
-                    $scope.bSelectedItem = $scope.items[i];
+            element.append($compile(html)(scope));
+            for (var i = 0; i < scope.items.length; i++) {
+                if (scope.items[i].id === scope.selectedItem) {
+                    scope.bSelectedItem = scope.items[i];
                     break;
                 }
             }
-            $scope.selectVal = function (item) {
+            scope.selectVal = function (item) {
                 switch (attrs.menuType) {
                     case "button":
                         $('button.button-label', element).html(item.name);
@@ -87,11 +87,12 @@ baasModule.directive('bsDropdown', function ($compile) {
                         $('a.dropdown-toggle', element).html('<b class="caret"></b> ' + item.name);
                         break;
                 }
-                $scope.doSelect({
-                    selectedVal: item.id
+                scope.doSelect({
+                    selectedVal: item.name
+                    //selectedVal: item.id
                 });
             };
-            $scope.selectVal($scope.bSelectedItem);
+            scope.selectVal(scope.bSelectedItem);
         }
     };
 });
