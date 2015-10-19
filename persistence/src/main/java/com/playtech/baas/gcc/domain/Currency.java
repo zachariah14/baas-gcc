@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="CURRENCY")
+@Table(name = "CURRENCY")
 public class Currency implements Serializable {
     @Id
     @GeneratedValue

@@ -33,7 +33,7 @@ public class CurrencyRepositoryIntegrationTest {
         Currency currency = currencyRepository.findOne(0L);
         //then:
         assertThat(currency).isNotNull();
-        assertThat(currency.getCurname()).isNotNull().isEqualTo("Default Coins");
+        assertThat(currency.getCurname()).isNotNull().isEqualTo("GRN");
     }
 
     @Test

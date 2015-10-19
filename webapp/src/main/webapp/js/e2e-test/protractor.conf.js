@@ -1,3 +1,10 @@
+//HOW TO RUN IT
+/*From one terminal run:
+* webdriver-manager start
+* From another terminal window run:
+* protractor _my_scenario_.js
+* */
+
 exports.config = {
 	allScriptsTimeout: 11000,
 

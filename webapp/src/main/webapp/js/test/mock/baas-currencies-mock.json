@@ -1,0 +1,14 @@
+[
+  {
+    "id":0,"curname":"GRN","curtype":"Integer","curmin":"0","curmax":"45000000"
+  },
+  {
+    "id":1,"curname":"USD","curtype":"Float","curmin":"0","curmax":"100"
+  },
+  {
+    "id":2,"curname":"EUR","curtype":"Integer","curmin":"0","curmax":"2000000"
+  },
+  {
+    "id":3,"curname":"Default Coins","curtype":"Integer","curmin":"0","curmax":"1000000"
+  }
+]

@@ -48,19 +48,6 @@ baasModule.config(['$routeProvider', function($routeProvider) {
         });
 }]);
 
-baasModule.directive("menu", function() {
-    return {
-        templateUrl: 'templates/uicomponents.html'
-        //restrict: "E",
-        //template: "",
-        //transclude: true,
-        //scope: {
-        //    visible: "=",
-        //    alignment: "@"
-        //}
-    };
-});
-
 baasModule.directive("menuItem", function() {
     return {
         restrict: "E",

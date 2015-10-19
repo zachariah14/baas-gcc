@@ -1,15 +1,24 @@
+/*
+ * HOW TO RUN IT
+ * From one terminal run:
+ * webdriver-manager start
+ * From another terminal window run:
+ * protractor _my_scenario_.js
+ *
+ * */
+
 'use strict';
 
-describe('clap-exam app', function() {
+describe('baas app', function() {
 
-	it('should automatically redirect to /quest view when location hash/fragment is empty', function() {
+	it('should automatically redirect to /currency view when location hash/fragment is empty', function() {
 		browser.get('#/');
-		expect(browser.getLocationAbsUrl()).toMatch("/quest");
+		expect(browser.getLocationAbsUrl()).toMatch("/Currencies");
 	});
 
-	it('should render quest when user navigates to /quest', function() {
-		browser.get('#/quest');
-		expect(browser.getLocationAbsUrl()).toMatch("/quest");
+	it('should render quest when user navigates to /currency', function() {
+		browser.get('#/Currencies');
+		expect(browser.getLocationAbsUrl()).toMatch("/Currencies");
 	});
 
 	describe('quest', function() {
@@ -17,35 +26,39 @@ describe('clap-exam app', function() {
 			browser.get('#/');
 		});
 
-		//expect(element.all(by.css('[ng-view] label')).first().getText()).toMatch(/partial for view 1/);
-		it('should find all labels on quest page that are 2', function() {
-			//browser.get('#/');
-			var elements = element.all(by.css('label'));
-			expect(elements.count()).toEqual(2);
-		});
-
-		it('should find all questions of binding quest.question that are 2', function() {
-			//browser.get('#/');
-			var els = element.all(by.binding('quest.question'));
-			expect(els.count()).toEqual(2);
-		});
-
-		it('element text of binding quest.question should match the Question regexp', function() {
-			//browser.get('#/');
-			var el = (element.all(by.binding('quest.question')).first()).getText();
-			expect(el).toMatch(/Question/);
-		});
-
-		it('should find all answers of binding answers.answer that are 4', function() {
-			//browser.get('#/');
-			var els = element.all(by.binding('answers.answer'));
+		it('should find all currency of binding currency.curname that are 4', function() {
+			var els = element.all(by.binding('currency.curname'));
 			expect(els.count()).toEqual(4);
 		});
 
-		it('element text of binding answers.answer should match the QuestOption regexp', function() {
-			//browser.get('#/');
-			var el = (element.all(by.binding('answers.answer')).first()).getText();
-			expect(el).toMatch(/QuestOption/);
+		it('should find all top menu items of binding menu that are 4', function() {
+			var els = element.all(by.binding('menu'));
+			expect(els.count()).toEqual(4);
+		});
+
+		it('text of the first element of binding menu should match the Build regexp', function() {
+			var el = (element.all(by.binding('menu'))).getText();
+			expect(el).toMatch(/Build/);
+		});
+
+		it('text of the last element of binding menu should match the Grow regexp', function() {
+			var el = (element.all(by.binding('menu'))).getText();
+			expect(el).toMatch(/Grow/);
+		});
+
+		it('should find all left menu items of binding group.items that are 11', function() {
+			var els = element.all(by.css('.list-group-item'));
+			expect(els.count()).toEqual(11);
+		});
+
+		it('text of the first element of class .list-group-item should match the Properties regexp', function() {
+			var el = (element.all(by.css('.list-group-item')).first()).getText();
+			expect(el).toMatch(/Properties/);
+		});
+
+		it('text of the last element of class .list-group-item should match the Currencies regexp', function() {
+			var el = (element.all(by.css('.list-group-item')).last()).getText();
+			expect(el).toMatch(/Currencies/);
 		});
 
 	});

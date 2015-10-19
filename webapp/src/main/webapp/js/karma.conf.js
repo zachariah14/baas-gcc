@@ -23,9 +23,8 @@ module.exports = function(config) {
       'd3/jquery-1.11.3.min.js',
       'application.js',
       'controllers.js',
-      'clap-exam.js',
-      'test/*Spec.js',
-      'test/mock/clap-quest-mock.json',
+      'test/baasSpec.js',
+      'test/mock/baas-currencies-mock.json',
       // JSON fixture
       { pattern:  'test/mock/*.json',
         watched:  true,

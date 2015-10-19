@@ -1,7 +1,6 @@
 var baasControllers = angular.module('baasControllers', []);
 
 baasControllers.controller('menuCtrl', function ($scope, $location) {
-    //$scope.menu = ['Game', 'Players', 'Economy'];
     $scope.groups =
     [
         {
@@ -75,15 +74,6 @@ baasControllers.controller('CurrencyController', function($scope, $http) {
             $scope.errorMessage = "Adding currency failed!"
         });
     };
-
-
-    //$scope.isActive = function (path) {
-    //    if ($location.path().substr(0, path.length) === path) {
-    //        return true;
-    //    } else {
-    //        return false;
-    //    }
-    //}
 
     $scope.menus = ['Build', 'Manage', 'Analyze', 'Grow'];
 
